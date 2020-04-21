@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -8,7 +9,7 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
-
+gi
     <asset:stylesheet src="application.css"/>
 
     <g:layoutHead/>
@@ -25,7 +26,18 @@
     <div class="collapse navbar-collapse" aria-expanded="false" style="height: 0.8px;" id="navbarContent">
         <ul class="nav navbar-nav ml-auto">
             <g:pageProperty name="page.nav"/>
+            <sec:ifLoggedIn>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Hello <sec:username/><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li>(<g:link controller="logout">Logout</g:link>)</li>
+                    </ul>
+                </li>
+            </sec:ifLoggedIn>
         </ul>
+
     </div>
 
 </nav>
